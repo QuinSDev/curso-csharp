@@ -3,15 +3,15 @@
 do
 {
     Console.Write("Ingresa un número: ");
-    var numero = int.Parse(Console.ReadLine()!);
+    var num = int.Parse(Console.ReadLine()!);
 
-    if (numero % 2 == 0)
+    if (num % 2 == 0)
     {
-        Console.WriteLine("El número: " + numero + ", es par\n");
+        Console.WriteLine("El número: " + num + ", es par\n");
     }
     else
     {
-        Console.WriteLine("El número: " + numero + ", es impar\n");
+        Console.WriteLine("El número: " + num + ", es impar\n");
     }
 }
 while (true);
