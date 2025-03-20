@@ -50,4 +50,3 @@ else if (num3 > num1 && num3 > num2)
 }
 
 Console.Write("El número mayor es: ", mayor);
-
