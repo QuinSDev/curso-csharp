@@ -1,53 +1,41 @@
 ﻿//Construir un programa que pida por pantalla 3 números y luego diga cuál es el mayor, el del medio y
 //el menor de los números ingresados.
 
-Console.Write("Ingrese el primer número: ");
-var num1 = int.Parse(Console.ReadLine()!);
-Console.Write("Ingrese el segundo número: ");
-var num2 = int.Parse(Console.ReadLine()!);
-Console.Write("Ingrese el tercer número: ");
-var num3 = int.Parse(Console.ReadLine()!);
-
-int mayor;
-
-if (num1 > num2 && num1 > num3)
+do
 {
-    mayor = num1;
+    Console.Write("Ingrese el primer número: ");
+    var num1 = Console.ReadLine();
+    Console.Write("Ingrese el segundo número: ");
+    var num2 = Console.ReadLine();
+    Console.Write("Ingrese el tercer número: ");
+    var num3 = Console.ReadLine();
 
-    if (num2 > num3)
+    if (int.TryParse(num1, out int intNum1) && int.TryParse(num2, out int intNum2) 
+        && int.TryParse(num3, out int intNum3))
     {
-        mayor = num2;
-
+        if (intNum1 != intNum2 && intNum1 != intNum3 && intNum2 != intNum3)
+        {
+            if (intNum1 > intNum2 && intNum1 > intNum3)
+            {
+                Console.WriteLine($"El número {intNum1} es el mayor");
+            }
+            else if (intNum2 > intNum1 && intNum2 > intNum3)
+            {
+                Console.WriteLine($"El número {intNum2} es el mayor");
+            }
+            else
+            {
+                Console.WriteLine($"El número {intNum3} es el mayor");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Debe ingresar tres números diferentes.");
+        }
     }
     else
     {
-        mayor = num3;
+        Console.WriteLine("Debe Ingresar solo numeros");
     }
-}
-else if (num2 > num1 && num2 > num3)
-{
-    mayor = num2;
-    if (num1 > num3)
-    {
-        mayor = num1;
-    }
-    else
-    {
-        mayor = num3;
-    }
-}
-else if (num3 > num1 && num3 > num2)
-{
-    mayor = num3;
-    if (num1 > num2)
-    {
-        mayor = num1;
-    }
-    else
-    {
-        mayor = num2;
-    }
-}
 
-Console.Write("El número mayor es: ", mayor);
-
+} while (true);
